@@ -30,7 +30,7 @@ class User(Base):
     password = Column(String)
     first_name = Column(String)
     last_name = Column(String)
-    nick_name = Column(String)
+    nickname = Column(String)
     created_at = Column(String, default=datetime.utcnow())
 
 
@@ -47,6 +47,7 @@ class Stream(Base):
 
 class AuthToken(Base):
     __tablename__ = 'auth_token'
+
     id = Column(Integer, primary_key=True)
     token = Column(String)
     user_id = Column(Integer, ForeignKey('user.id'))
